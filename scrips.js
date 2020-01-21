@@ -3,6 +3,7 @@ var row = document.getElementById("row")
 var colom = document.getElementById("colom")
 var button = document.getElementById("button")
 
+
 button.addEventListener('click', function (el, rows, cols) {
   var el = elem
   var rows = parseInt(row.value)
@@ -18,14 +19,15 @@ button.addEventListener('click', function (el, rows, cols) {
     }
     table.appendChild(tr);
   }
-
   el.appendChild(table);
 })
 
 elem.addEventListener('click', function (cell) {
-  var cell = document.getElementsByTagName('td') 
-  var chip = document.createElement('div')
-  chip.className = 'chip'
-  chip.id = 'chip'
-  cell.appendChild(div)
+  let elm = cell.target;
+  var div = document.createElement('div');
+  elm.appendChild(div);
+  div.setAttribute("id", "chip")
+  div.setAttribute("class", "chip")
 })
+
+
