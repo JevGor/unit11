@@ -3,7 +3,6 @@ var row = document.getElementById("row")
 var colom = document.getElementById("colom")
 var button = document.getElementById("button")
 
-
 button.addEventListener('click', function (el, rows, cols) {
   var el = elem
   var rows = parseInt(row.value)
@@ -15,6 +14,7 @@ button.addEventListener('click', function (el, rows, cols) {
 
     for (var x = 0; x < cols; x += 1) {
       var td = document.createElement('td');
+      td.setAttribute("id", "td")
       tr.appendChild(td);
     }
     table.appendChild(tr);
@@ -23,11 +23,38 @@ button.addEventListener('click', function (el, rows, cols) {
 })
 
 elem.addEventListener('click', function (cell) {
-  let elm = cell.target;
-  var div = document.createElement('div');
-  elm.appendChild(div);
-  div.setAttribute("id", "chip")
-  div.setAttribute("class", "chip")
+  let elm = document.getElementsById('td') && cell.target;
+  if (elm.hasChildNodes() != true) {
+    let div = document.createElement('div');
+    elm.appendChild(div);
+    div.setAttribute("id", "chip")
+    div.setAttribute("class", "chip")
+  } else {
+    elm.remove()
+  }
 })
 
+// elem.addEventListener('click', function (cell) {
+//   let elm = cell.target;
+//   var div = document.createElement('div');
+//   elm.appendChild(div);
+//   div.setAttribute("id", "chip")
+//   div.setAttribute("class", "chip")
+// })
 
+// elem.addEventListener('click', function (cell) {
+//   let elm = cell.target;
+//   elm.removeChild();
+// })
+
+// elem.addEventListener('click', function (cell) {
+//   let elm = cell.target;
+//   if (elm.hasChildNodes() != true) {
+//     let div = document.createElement('div');
+//     elm.appendChild(div);
+//     div.setAttribute("id", "chip")
+//     div.setAttribute("class", "chip")
+//     elm.appendChild.maxlength == 1
+//   } else {
+//     elm.removeChild('div')  }
+// })
