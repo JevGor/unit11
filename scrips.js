@@ -34,6 +34,24 @@ elem.addEventListener('click', function (cell) {
   }
 })
 
+//  ПРОБОВАЛ ВАРИАНТ ДВОЙНОГО ИФ - НЕ АЙС
+// elem.addEventListener('click', function (cell) {
+//   let elm = cell.target;
+//   if (document.getElementsById('td') == true){
+//     if (elm.hasChildNodes() != true) {
+//       let div = document.createElement('div');
+//       elm.appendChild(div);
+//       div.setAttribute("id", "chip")
+//       div.setAttribute("class", "chip")
+//     } else {
+//       elm.remove()
+//     }
+//   }
+//   else {
+//     return
+//   }
+// })
+
 // elem.addEventListener('click', function (cell) {
 //   let elm = cell.target;
 //   var div = document.createElement('div');
