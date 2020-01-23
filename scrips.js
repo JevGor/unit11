@@ -23,7 +23,7 @@ button.addEventListener('click', function (el, rows, cols) {
 })
 
 elem.addEventListener('click', function (cell) {
-  let elm = document.getElementsById('td') && cell.target;
+  let elm = cell.target;
   if (elm.hasChildNodes() != true) {
     let div = document.createElement('div');
     elm.appendChild(div);
