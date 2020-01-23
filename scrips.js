@@ -3,6 +3,7 @@ var row = document.getElementById("row")
 var colom = document.getElementById("colom")
 var button = document.getElementById("button")
 
+
 button.addEventListener('click', function (el, rows, cols) {
   var el = elem
   var rows = parseInt(row.value)
@@ -11,7 +12,7 @@ button.addEventListener('click', function (el, rows, cols) {
 
   for (var i = 0; i < rows; i += 1) {
     var tr = document.createElement('tr');
-
+    tr.setAttribute("id", "tr")
     for (var x = 0; x < cols; x += 1) {
       var td = document.createElement('td');
       td.setAttribute("id", "td")
@@ -24,32 +25,27 @@ button.addEventListener('click', function (el, rows, cols) {
 
 elem.addEventListener('click', function (cell) {
   let elm = cell.target;
+  if ( elm.id == 'chip' )   elm.remove();
+
   if (elm.hasChildNodes() != true) {
     let div = document.createElement('div');
     elm.appendChild(div);
     div.setAttribute("id", "chip")
-    div.setAttribute("class", "chip")
-  } else {
-    elm.remove()
+    div.setAttribute("class", "chips")
   }
 })
 
-//  ПРОБОВАЛ ВАРИАНТ ДВОЙНОГО ИФ - НЕ АЙС
-// elem.addEventListener('click', function (cell) {
-//   let elm = cell.target;
-//   if (document.getElementsById('td') == true){
-//     if (elm.hasChildNodes() != true) {
-//       let div = document.createElement('div');
-//       elm.appendChild(div);
-//       div.setAttribute("id", "chip")
-//       div.setAttribute("class", "chip")
-//     } else {
-//       elm.remove()
-//     }
-//   }
-//   else {
-//     return
-//   }
+
+// {
+//   let elm = cell.target.hasAttribute('td')
+//   // if (elm.hasChildNodes() != true) {
+//     let div = document.createElement('div');
+//     elm.appendChild(div);
+//     div.setAttribute("id", "chip")
+//     div.setAttribute("class", "chip")
+//   // } else {
+//   //   elm.remove()
+//   // }
 // })
 
 // elem.addEventListener('click', function (cell) {
